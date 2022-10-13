@@ -6,16 +6,12 @@ import time
 # Dobljeno float vrednost shranite v spremenljivko n. 
 # Nato n izpišite in izpišite njen tip.
 
-n = input("Vnesite neko celo število")
-print("OK, vnesli ste vrednost" + n + "ki je tipa: " + str(type(n)))
+n = input("Vnesite neko celo število:  ")
+print("OK, vnesli ste vrednost " + str(n) + ", ki je shranjena v spremenljivki n, n je tipa: " + str(type(n)))
 
-print("meljem", end = ' ')
-time.sleep(0.3)
-print(".", end = ' ')
-time.sleep(0.3)
-print(".", end = ' ')
-time.sleep(0.3)
-print(".", end = ' ')
+time.sleep(1)
+print("")
+print("")
 
 n = float(n)
-print("sedaj sem pretvoril vašo vneseno vrednost " + n + ", shranjeno v spremenljivki n v tip spremenljivke " + str(type(n)))
+print("sedaj sem pretvoril vašo vneseno vrednost " + str(n) + ", shranjeno v spremenljivki n v tip spremenljivke " + str(type(n)))
