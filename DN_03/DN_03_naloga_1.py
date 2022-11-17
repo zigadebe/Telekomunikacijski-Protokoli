@@ -6,7 +6,20 @@
 
 
 def emso_leta_preracun():
-    # dopolnite funkcijo z lastno kodo
+    emso = input('Vnesi svoj EMSO: ')
+    leto = ''
+
+    for i in range(4,7):
+        leto = leto + emso[i]
+    
+    leto = int(leto)
+
+    leto = leto + 2000
+
+    print(str(leto))
+
 # primer uporabe 1
-starost = emso_leta_preracun()
+#starost = emso_leta_preracun()
+
+emso_leta_preracun()
 # -------------------------------
