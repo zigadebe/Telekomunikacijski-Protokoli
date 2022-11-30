@@ -1,23 +1,18 @@
-# Dopolnite spodnjo funkcijo, ki sprejeme kot parameter URL spletne strani, vrne pa HTML kodo strani v tekstovnem formatu. 
-# Uporabite knjižnico request. Po prejemu odgovora preverite ali je status koda enaka 200 (v tem primeru vrnenmo HTML kodo). 
-# V vseh drugih primerih vrnemo vrednost False.
+# Podobno kot v prvem primeru napišite funkcijo ki sprejme URL API-ja (vrača vrednosti v JSNO formatu) in vrnite vrednost kot slovar. 
+# Še vedno izvedite validacijo.
 import requests
+import json
 
-def get_html(url):
+def get_api_data(url):
     koda = requests.get(url)
-    if (== 200):
-        return koda
+    if (koda.status_code == 200):
+        return json.loads(koda.text)
     else:
         return False
 
 # preizkusite na primerih
-page = get_html("https://example.com/")
-print(page)
->>> <!doctype html>
->>> <html>
->>> <head>
->>>     <title>Example Domain</title>
-...
-page = get_html("http://example.com/neobstaja")
-print(page)
->>> False
+data = get_api_data("https://jsonplaceholder.typicode.com/todos/1")
+print(data)
+
+data = get_api_data("https://jsonplaceholder.typicode.com/nedala/nedala")
+print(data)
